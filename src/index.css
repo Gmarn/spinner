@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-container {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  place-content: center;
+}
+
+.outer-spinner {
+  width: 100%;
+  overflow: visible;
+  stroke-width: 30px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* .outer-spinner-line {
+  stroke: #222;
+  fill: "rgba(0, 0, 0, 0)"
+}
+
+.outer-spinner-line-light {
+  stroke: #ddd;
+  fill: "rgba(0, 0, 0, 0)"
+}
+*/

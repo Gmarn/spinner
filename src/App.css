@@ -2,37 +2,71 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --delay: 0ms;
+  --duration: 6000ms;
+  --dasharray: 3860;
+  --revDasharray: -3860;
+  --path: path('m 211.619 15.642 c -137.447 -2.4711 -264.638 212.481 105.926 435.341 c 0.405975 -0.730988 1.96899 -0.730988 2.375 0 c 382.518 -230.049 234.665 -451.64 92.626 -434.391 c -55.373 6.7245 -81.504 37.4565 -93.814 63.888 c -12.309 -26.4315 -38.44 -57.1635 -93.813 -63.888 c -4.438 -0.539301 -8.86601 -0.8702 -13.3 -0.95 l 0 -0.0001 Z')
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.spinner-container {
+  width: 200px;
+  height: 200px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.el {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  background-color: #f45f42;
+  offset-distance: 100%;
+  offset-path: path('m 211.619 15.642 c -137.447 -2.4711 -264.638 212.481 105.926 435.341 c 0.405975 -0.730988 1.96899 -0.730988 2.375 0 c 382.518 -230.049 234.665 -451.64 92.626 -434.391 c -55.373 6.7245 -81.504 37.4565 -93.814 63.888 c -12.309 -26.4315 -38.44 -57.1635 -93.813 -63.888 c -4.438 -0.539301 -8.86601 -0.8702 -13.3 -0.95 l 0 -0.0001 Z');
+  animation: draw 2 infinite linear;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: var(--dasharray);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    stroke-dashoffset: 0;
   }
+  100% {
+    stroke-dashoffset: var(--revDasharray);
+  }
+}
+
+/*@keyframes move {
+  100% {
+    offset-distance: 0;
+  }
+}*/
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.el:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.el:nth-of-type(2) {
+  animation-delay: 0.2s;
+  background-color: #f44242;
 }

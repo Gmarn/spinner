@@ -1,0 +1,76 @@
+$valhalla-900: #221551;
+
+.inner-spinner-container {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  box-sizing: border-box;
+  top: -3rem;
+}
+
+.inner-spinner {
+  position: absolute;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 0.4rem solid transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  top: 0.55rem;
+  left: 0.55rem;
+  animation: spin 2s infinite cubic-bezier(0.51, 0, 0.39, 1);
+}
+
+%dot-valhalla {
+  width: 0.38rem;
+  height: 0.38rem;
+  background: $valhalla-900;
+  border-radius: 50%;
+}
+
+.inner-spinner:nth-of-type(1) {
+  border-top: 0.4rem solid $valhalla-900;
+  animation-delay: 0.34s;
+
+  .dot-2-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .dot-2 {
+      @extend %dot-valhalla;
+      position: relative;
+      top: -0.18rem;
+      left: 0.17rem;
+    }
+  }
+}
+
+.inner-spinner:nth-of-type(2) {
+  border-right: 0.4rem solid $valhalla-900;
+  animation-delay: 0s;
+
+  .dot-1-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .dot-1 {
+      @extend %dot-valhalla;
+      position: relative;
+      top: -0.18rem;
+      left: 0.17rem;
+    }
+  }
+}
+
+.inner-spinner:nth-of-type(3) {
+  border-bottom: 0.4rem solid $valhalla-900;
+  animation-delay: 0.05s;
+}
+
+.inner-spinner:nth-of-type(4) {
+  border-left: 0.4rem solid $valhalla-900;
+  animation-delay: 0.05s;
+}

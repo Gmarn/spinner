@@ -1,76 +1,78 @@
 $valhalla-900: #221551;
+$inner-spinner-size: 58px;
+$outter-spinner-size: 105px;
 
 .inner-spinner-container {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: $outter-spinner-size;
+  height: $outter-spinner-size;
   box-sizing: border-box;
-  top: -3rem;
+  top: -1 *  $outter-spinner-size;
 }
 
 .inner-spinner {
   position: absolute;
-  width: 1.9rem;
-  height: 1.9rem;
-  border: 0.4rem solid transparent;
+  width: $inner-spinner-size;
+  height: $inner-spinner-size;
+  border: 18px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  top: 0.55rem;
-  left: 0.55rem;
-  animation: spin 2s infinite cubic-bezier(0.51, 0, 0.39, 1);
+  top: 24px;
+  left: 24px;
 }
 
 %dot-valhalla {
-  width: 0.38rem;
-  height: 0.38rem;
+  width: 18px;
+  height: 18px;
   background: $valhalla-900;
   border-radius: 50%;
+  position: relative;
+}
+
+%dot-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .inner-spinner:nth-of-type(1) {
-  border-top: 0.4rem solid $valhalla-900;
-  animation-delay: 0.34s;
+  border-top: 18px solid $valhalla-900;
+  animation: spin 2s infinite cubic-bezier(.62,0.14,.58,1);
 
   .dot-2-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    @extend %dot-container;
     justify-content: flex-end;
 
     .dot-2 {
       @extend %dot-valhalla;
-      position: relative;
-      top: -0.18rem;
-      left: 0.17rem;
+      top: -13px;
+      left: 11px;
     }
   }
 }
 
 .inner-spinner:nth-of-type(2) {
-  border-right: 0.4rem solid $valhalla-900;
-  animation-delay: 0s;
+  border-right: 18px solid $valhalla-900;
+  animation: spin 2s infinite cubic-bezier(.23,.33,.58,1);
 
   .dot-1-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    @extend %dot-container;
     justify-content: flex-end;
 
     .dot-1 {
       @extend %dot-valhalla;
-      position: relative;
-      top: -0.18rem;
-      left: 0.17rem;
+      top: -11px;
+      left: 13px;
     }
   }
 }
 
 .inner-spinner:nth-of-type(3) {
-  border-bottom: 0.4rem solid $valhalla-900;
-  animation-delay: 0.05s;
+  border-bottom: 18px solid $valhalla-900;
+  animation: spin 2s infinite cubic-bezier(0.25, 0.15, 0.59, 1);
 }
 
 .inner-spinner:nth-of-type(4) {
-  border-left: 0.4rem solid $valhalla-900;
-  animation-delay: 0.05s;
+  border-left: 18px solid $valhalla-900;
+  animation: spin 2s infinite cubic-bezier(0.62, 0.30, 0.6, 1);
 }

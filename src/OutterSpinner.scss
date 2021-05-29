@@ -1,31 +1,32 @@
 $razzmatazz-900: #E0004D;
+$outter-spinner-size: 106px;
 
 .outter-spinner-container {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: $outter-spinner-size;
+  height: $outter-spinner-size;
   box-sizing: border-box;
   transform: rotate(45deg);
 }
 
 .outter-spinner {
-  width: 3rem;
-  height: 3rem;
-  border: 0.4rem solid transparent;
-  border-right: 0.4rem solid $razzmatazz-900;
+  width: $outter-spinner-size;
+  height: $outter-spinner-size;
+  border: 16px solid transparent;
+  border-right: 16px solid $razzmatazz-900;
   border-radius: 50%;
   position: absolute;
   box-sizing: border-box;
   top: 0;
   left: 0;
-  animation: spin 2s infinite cubic-bezier(0.51, 0, 0.39, 1);
 }
 
 %dot-razzmatazz {
-  width: 0.38rem;
-  height: 0.38rem;
+  width: 16px;
+  height: 16px;
   background: $razzmatazz-900;
   border-radius: 50%;
+  position: relative;
 }
 
 .dot-top-container {
@@ -35,6 +36,8 @@ $razzmatazz-900: #E0004D;
 
 .dot-top {
   @extend %dot-razzmatazz;
+  top: -2px;
+  left: 4px;
 }
 
 .dot-bottom-container {
@@ -47,8 +50,8 @@ $razzmatazz-900: #E0004D;
 
 .dot-bottom {
   @extend %dot-razzmatazz;
-  position: relative;
-  top: -0.38rem;
+  top: -14px;
+  left: 4px;
 }
 
 @keyframes move {
@@ -62,21 +65,21 @@ $razzmatazz-900: #E0004D;
 }
 
 .outter-spinner:nth-of-type(1) {
-  animation-delay: 0s;
+  animation: spin 2s infinite cubic-bezier(.42,.25,.59,1);
 }
 
 .outter-spinner:nth-of-type(2) {
-  animation-delay: 0.1s;
+  animation: spin 2s infinite cubic-bezier(.75,.23,.66,1);
 }
 
 .outter-spinner:nth-of-type(3) {
-  animation-delay: 0.2s;
+  animation: spin 2s infinite cubic-bezier(.52,.3,.65,.79);
 }
 
 .outter-spinner:nth-of-type(4) {
-  animation-delay: 0.25s;
+  animation: spin 2s infinite cubic-bezier(.53,.2,.54,.99);
 }
 
 .outter-spinner:nth-of-type(5) {
-  animation-delay: 0.34s;
+  animation: spin 2s infinite cubic-bezier(.43,.14,.33,.99);
 }
